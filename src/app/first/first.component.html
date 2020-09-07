@@ -1,0 +1,6 @@
+<p #paragraphe [hidden]="isHidden">first works!</p>
+<button class="btn btn-danger"
+ (click)="showHide(paragraphe.innerHTML)">
+  show/hide
+</button>
+<app-second></app-second>
