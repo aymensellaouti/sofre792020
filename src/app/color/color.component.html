@@ -5,14 +5,21 @@
 >
   test
 </div>
-
 <input
   class="form-control"
   #inputColor
   (change)="changeColor(inputColor.value)"
   />
+
 <button
 (click)="resetColor()"
 class="btn btn-primary">
   Default color
 </button>
+
+
+<input
+  class="form-control"
+  type="color"
+  [(ngModel)]="color"
+>
