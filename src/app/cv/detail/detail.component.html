@@ -1,21 +1,20 @@
-<div
- *ngIf="personne"
-class="card-container">
+<div *ngIf="personne" class="card-container">
   <div class="card">
     <div class="front">
       <div class="cover">
         <img src="assets/images/rotating_card_thumb2.png" />
       </div>
       <div class="user">
-        <img class="img-circle" src="assets/images/{{ personne?.path }}" />
+        <img
+          class="img-circle"
+          src="assets/images/{{ personne?.path | defaultImage }}"
+        />
       </div>
       <div class="content">
         <div class="main">
-          <h3 class="name">{{ personne?.name }}</h3>
+          <h3 class="name">{{ personne?.name | uppercase }}</h3>
           <p class="profession">{{ personne?.job }}</p>
-          <p class="text-center">
-            {{personne?.age}} ans
-          </p>
+          <p class="text-center">{{ personne?.age }} ans</p>
         </div>
         <div class="footer">
           <i class="fa fa-mail-forward"></i> Auto Rotation
@@ -25,15 +24,13 @@ class="card-container">
     <!-- end front panel -->
     <div class="back">
       <div class="header">
-        <h5 class="motto">
-
-        </h5>
+        <h5 class="motto"></h5>
       </div>
       <div class="content">
         <div class="main">
-          <h4 class="text-center">{{personne?.job}}</h4>
+          <h4 class="text-center">{{ personne?.job }}</h4>
           <p class="text-center">
-            {{personne?.cin}}
+            {{ personne?.cin }}
           </p>
 
           <div class="stats-container">

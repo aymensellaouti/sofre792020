@@ -12,7 +12,8 @@ export class ListComponent implements OnInit {
   constructor() {
     this.personnes = [
       new Personne(1, 'sellaouti', 'aymen', 'teacher', 'as.jpg', 1234567, 38),
-      new Personne(2, 'mohamed', 'mohamed', 'ingenieur', 'cv.png', 1234567, 39),
+      new Personne(2, 'mohamed', 'mohamed', 'ingenieur', '          ', 1234567, 39),
+      new Personne(2, 'mohamed', 'mohamed', 'ingenieur', '', 1234567, 39),
     ];
   }
   forwardPersonne(personne: Personne) {
