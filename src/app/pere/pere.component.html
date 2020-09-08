@@ -1,0 +1,14 @@
+<div [style.backgroundColor]="couleurDuPere">pere works!</div>
+
+<app-fils
+  [favoriteColor]="'pink'"
+  (sendDataToDad)="processSonData($event)"
+  [color]="'yellow'"
+  [maPropriete]="'pere'"
+></app-fils>
+
+<app-fils
+  (sendDataToDad)="processSonData($event)"
+  [color]="couleurDuPere"
+  [maPropriete]="'second papa'"
+></app-fils>
