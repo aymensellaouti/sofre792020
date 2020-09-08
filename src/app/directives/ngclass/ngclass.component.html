@@ -1,0 +1,14 @@
+<div
+  appHighlight
+  [ngClass]="{
+    lampe: evaluate()
+  }"
+>
+  Lampe
+</div>
+<input
+  appRainbow
+  type="number"
+  class="form-control"
+  [(ngModel)]="allume"
+/>

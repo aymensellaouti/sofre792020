@@ -1,0 +1,12 @@
+div {
+  border: 1px solid red;
+  width: 150px;
+  height: 150px;
+  padding: 50px;
+}
+
+.lampe {
+  color: white;
+  background-color: yellow;
+  border: 2px red dashed;
+}

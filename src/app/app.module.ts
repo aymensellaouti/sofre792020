@@ -12,6 +12,14 @@ import { CardComponent } from './card/card.component';
 import { PereComponent } from './pere/pere.component';
 import { FilsComponent } from './fils/fils.component';
 import { ListComponent } from './cv/list/list.component';
+import { ItemComponent } from './cv/item/item.component';
+import { CvComponent } from './cv/cv/cv.component';
+import { DetailComponent } from './cv/detail/detail.component';
+import { NgstyleComponent } from './directives/ngstyle/ngstyle.component';
+import { MiniWordComponent } from './directives/mini-word/mini-word.component';
+import { NgclassComponent } from './directives/ngclass/ngclass.component';
+import { HighlightDirective } from './directives/highlight.directive';
+import { RainbowDirective } from './directives/rainbow.directive';
 
 @NgModule({
   declarations: [
@@ -23,7 +31,15 @@ import { ListComponent } from './cv/list/list.component';
     CardComponent,
     PereComponent,
     FilsComponent,
-    ListComponent
+    ListComponent,
+    ItemComponent,
+    CvComponent,
+    DetailComponent,
+    NgstyleComponent,
+    MiniWordComponent,
+    NgclassComponent,
+    HighlightDirective,
+    RainbowDirective
   ],
   imports: [
     BrowserModule,
