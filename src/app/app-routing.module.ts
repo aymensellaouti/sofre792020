@@ -9,9 +9,11 @@ import { BackComponent } from './components/back/back.component';
 import { FrontComponent } from './components/front/front.component';
 import { SecondComponent } from './components/second/second.component';
 import { NF404Component } from './components/nf404/nf404.component';
+import { LoginComponent } from './pages/login/login.component';
 //cv/add
 const routes: Routes = [
   { path: '', redirectTo: 'cv', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
   {
     path: 'cv',
     children: [

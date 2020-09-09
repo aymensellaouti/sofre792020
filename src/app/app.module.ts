@@ -30,6 +30,9 @@ import { DetailsCvComponent } from './cv/pages/details-cv/details-cv.component';
 import { FrontComponent } from './components/front/front.component';
 import { BackComponent } from './components/back/back.component';
 import { NF404Component } from './components/nf404/nf404.component';
+import { FormExampleComponent } from './forms/form-example/form-example.component';
+import { AddPersonnesComponent } from './cv/pages/add-personnes/add-personnes.component';
+import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +62,9 @@ import { NF404Component } from './components/nf404/nf404.component';
     FrontComponent,
     BackComponent,
     NF404Component,
+    FormExampleComponent,
+    AddPersonnesComponent,
+    LoginComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

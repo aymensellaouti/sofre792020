@@ -1,0 +1,9 @@
+<form #myForm="ngForm">
+  <input class="form-control" type="text" required ngModel name="name" />
+  <input
+    class="form-control"
+    type="text"
+    pattern ="[0-1]?[0-9]{1,2}"
+    ngModel name="age" />
+</form>
+<button (click)="proccessForm(myForm)" class="btn btn-primary">Add User</button>
