@@ -26,6 +26,7 @@ import { TodoService } from './components/todo/service/todo.service';
 import { EmbaucheComponent } from './cv/components/embauche/embauche.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RouterSimulatorComponent } from './router-simulator/router-simulator.component';
+import { DetailsCvComponent } from './cv/pages/details-cv/details-cv.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { RouterSimulatorComponent } from './router-simulator/router-simulator.co
     EmbaucheComponent,
     NavbarComponent,
     RouterSimulatorComponent,
+    DetailsCvComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
