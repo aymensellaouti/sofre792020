@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Personne } from './../model/personne';
+import { Personne } from '../../model/personne';
 import { LoggerService } from 'src/app/services/logger.service';
-import { TodoService } from './../../todo/service/todo.service';
+import { TodoService } from '../../../components/todo/service/todo.service';
 
 @Component({
   selector: 'app-cv',

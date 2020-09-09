@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Personne } from './../model/personne';
-import { EmbaucheService } from './../services/embauche.service';
+import { Personne } from '../../model/personne';
+import { EmbaucheService } from '../../services/embauche.service';
 
 @Component({
   selector: 'app-detail',
