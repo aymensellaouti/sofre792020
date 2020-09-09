@@ -27,6 +27,8 @@ import { EmbaucheComponent } from './cv/components/embauche/embauche.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RouterSimulatorComponent } from './router-simulator/router-simulator.component';
 import { DetailsCvComponent } from './cv/pages/details-cv/details-cv.component';
+import { FrontComponent } from './components/front/front.component';
+import { BackComponent } from './components/back/back.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +55,8 @@ import { DetailsCvComponent } from './cv/pages/details-cv/details-cv.component';
     NavbarComponent,
     RouterSimulatorComponent,
     DetailsCvComponent,
+    FrontComponent,
+    BackComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
