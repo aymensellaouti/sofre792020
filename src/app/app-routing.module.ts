@@ -8,9 +8,10 @@ import { FirstComponent } from './components/first/first.component';
 import { BackComponent } from './components/back/back.component';
 import { FrontComponent } from './components/front/front.component';
 import { SecondComponent } from './components/second/second.component';
+import { NF404Component } from './components/nf404/nf404.component';
 //cv/add
 const routes: Routes = [
-  { path: '', component: CvComponent },
+  { path: '', redirectTo: 'cv', pathMatch: 'full' },
   {
     path: 'cv',
     children: [
@@ -19,14 +20,19 @@ const routes: Routes = [
       { path: ':id', component: DetailsCvComponent },
     ],
   },
-  {path: 'admin', component: BackComponent, children: [
-    {path: 'first', component: FirstComponent}
-  ]},
-  {path: 'front', component: FrontComponent, children: [
-    {path: 'second', component: SecondComponent}
-  ]},
+  {
+    path: 'admin',
+    component: BackComponent,
+    children: [{ path: 'first', component: FirstComponent }],
+  },
+  {
+    path: 'front',
+    component: FrontComponent,
+    children: [{ path: 'second', component: SecondComponent }],
+  },
   { path: 'todo', component: TodoComponent },
   { path: 'color/:color', component: ColorComponent },
+  { path: '**', component: NF404Component },
 ];
 
 @NgModule({

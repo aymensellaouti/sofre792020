@@ -29,6 +29,7 @@ import { RouterSimulatorComponent } from './router-simulator/router-simulator.co
 import { DetailsCvComponent } from './cv/pages/details-cv/details-cv.component';
 import { FrontComponent } from './components/front/front.component';
 import { BackComponent } from './components/back/back.component';
+import { NF404Component } from './components/nf404/nf404.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import { BackComponent } from './components/back/back.component';
     DetailsCvComponent,
     FrontComponent,
     BackComponent,
+    NF404Component,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
