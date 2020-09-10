@@ -33,6 +33,7 @@ import { NF404Component } from './components/nf404/nf404.component';
 import { FormExampleComponent } from './forms/form-example/form-example.component';
 import { AddPersonnesComponent } from './cv/pages/add-personnes/add-personnes.component';
 import { LoginComponent } from './pages/login/login.component';
+import { ObservableExampleComponent } from './observables/observable-example/observable-example.component';
 
 @NgModule({
   declarations: [
@@ -65,6 +66,7 @@ import { LoginComponent } from './pages/login/login.component';
     FormExampleComponent,
     AddPersonnesComponent,
     LoginComponent,
+    ObservableExampleComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

@@ -29,4 +29,12 @@ export class CvService {
       if (personne.id === id) return personne;
     });
   }
+  addPersonne(personne: Personne) {
+    if (this.personnes.length) {
+      personne.id = this.personnes[this.personnes.length - 1].id + 1;
+    } else {
+      personne.id = 1;
+    }
+    this.personnes.push(personne);
+  }
 }
