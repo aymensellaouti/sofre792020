@@ -36,6 +36,7 @@ import { AddPersonnesComponent } from './cv/pages/add-personnes/add-personnes.co
 import { LoginComponent } from './pages/login/login.component';
 import { ObservableExampleComponent } from './observables/observable-example/observable-example.component';
 import { UsersComponent } from './http/users/users.component';
+import { AuthInterceptorProvider } from './common/interceptor/auth';
 
 @NgModule({
   declarations: [
@@ -72,7 +73,7 @@ import { UsersComponent } from './http/users/users.component';
     UsersComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
-  providers: [],
+  providers: [AuthInterceptorProvider],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -19,7 +19,7 @@ export class CvComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.loggerService.log('Je suis le cvComponent');
+    /*     this.loggerService.log('Je suis le cvComponent'); */
     this.cvService.selectPersonne.subscribe((personne) => this.nbClick++);
   }
   selectPersonne(personne: Personne) {

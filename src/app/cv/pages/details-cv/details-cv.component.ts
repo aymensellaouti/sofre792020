@@ -24,4 +24,12 @@ export class DetailsCvComponent implements OnInit {
       );
     });
   }
+
+  deletePersonne() {
+    this.cvService.deletePersonneById(this.personne.id).subscribe(
+      (response) => this.router.navigate(['cv']),
+      (erreur) => console.log(erreur)
+    );
+
+  }
 }

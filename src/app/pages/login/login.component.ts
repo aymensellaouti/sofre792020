@@ -12,7 +12,11 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   constructor(private authService: AuthService, private router: Router) {}
   errorMessage = '';
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    if (this.authService.isAuthenticated()) {
+      this.router.navigate(['cv']);
+    }
+  }
   login(form: NgForm) {
     this.authService.login(form.value).subscribe(
       (data) => {

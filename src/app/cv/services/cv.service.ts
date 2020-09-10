@@ -41,12 +41,13 @@ export class CvService {
   getPersonneById(id: number): Observable<Personne> {
     return this.http.get<Personne>(API_PERSONNE_LINK + '/' + id);
   }
+
+  deletePersonneById(id: number): Observable<any> {
+    return this.http.delete<any>(API_PERSONNE_LINK + '/' + id);
+  }
+
   addPersonne(personne: Personne): Observable<Personne> {
-    const token = localStorage.getItem('token');
-/*     const params = new HttpParams().set('access_token', token);
- */
-    const headers = new HttpHeaders().set('Authorization', token);
-    return this.http.post<Personne>(API_PERSONNE_LINK, personne, { headers });
+    return this.http.post<Personne>(API_PERSONNE_LINK, personne);
   }
   broadcastSelectedPersonne(personne: Personne) {
     this.selectPersonne.next(personne);

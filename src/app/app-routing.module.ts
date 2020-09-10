@@ -11,6 +11,7 @@ import { SecondComponent } from './components/second/second.component';
 import { NF404Component } from './components/nf404/nf404.component';
 import { LoginComponent } from './pages/login/login.component';
 import { AddPersonnesComponent } from './cv/pages/add-personnes/add-personnes.component';
+import { AuthGuard } from './common/guards/auth.guard';
 //cv/add
 const routes: Routes = [
   { path: '', redirectTo: 'cv', pathMatch: 'full' },
@@ -19,7 +20,11 @@ const routes: Routes = [
     path: 'cv',
     children: [
       { path: '', component: CvComponent },
-      { path: 'add', component: AddPersonnesComponent },
+      {
+        path: 'add',
+        component: AddPersonnesComponent,
+        canActivate: [AuthGuard],
+      },
       { path: ':id', component: DetailsCvComponent },
     ],
   },

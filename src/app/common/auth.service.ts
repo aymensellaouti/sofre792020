@@ -20,4 +20,8 @@ export class AuthService {
   login(credentials): Observable<any> {
     return this.http.post<any>(API_LOGIN_LINK, credentials);
   }
+
+  logout() {
+    localStorage.removeItem('token');
+  }
 }
