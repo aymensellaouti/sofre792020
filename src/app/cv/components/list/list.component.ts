@@ -16,6 +16,15 @@ export class ListComponent implements OnInit {
   } */
 
   ngOnInit(): void {
-    this.personnes = this.cvService.getPersonnes();
+    this.cvService.getPersonnes().subscribe(
+      (personnes) => {
+        this.personnes = personnes;
+      },
+      (erreur) => {
+        alert('Pbm de cnx réseau les data sont Fake !');
+        this.personnes = this.cvService.getFakePersonnes();
+        console.log(erreur);
+      }
+    );
   }
 }

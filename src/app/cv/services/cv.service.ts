@@ -1,6 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Personne } from './../model/personne';
-import { Subject } from 'rxjs';
+import { Subject, Observable } from 'rxjs';
+import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
+
+const API_PERSONNE_LINK =
+  'https://immense-citadel-91115.herokuapp.com/api/personnes';
 
 @Injectable({
   providedIn: 'root',
@@ -8,7 +12,7 @@ import { Subject } from 'rxjs';
 export class CvService {
   personnes: Personne[] = [];
   selectPersonne = new Subject<Personne>();
-  constructor() {
+  constructor(private http: HttpClient) {
     this.personnes = [
       new Personne(1, 'sellaouti', 'aymen', 'teacher', 'as.jpg', 1234567, 38),
       new Personne(
@@ -23,23 +27,29 @@ export class CvService {
       new Personne(2, 'mohamed', 'mohamed', 'ingenieur', '', 1234567, 39),
     ];
   }
-  getPersonnes() {
+  getFakePersonnes() {
     return this.personnes;
   }
-  getPersonneById(id: number): Personne {
+  getPersonnes(): Observable<Personne[]> {
+    return this.http.get<Personne[]>(API_PERSONNE_LINK);
+  }
+  getFakePersonneById(id: number): Personne {
     return this.personnes.find((personne) => {
       if (personne.id === id) return personne;
     });
   }
-  addPersonne(personne: Personne) {
-    if (this.personnes.length) {
-      personne.id = this.personnes[this.personnes.length - 1].id + 1;
-    } else {
-      personne.id = 1;
-    }
-    this.personnes.push(personne);
+  getPersonneById(id: number): Observable<Personne> {
+    return this.http.get<Personne>(API_PERSONNE_LINK + '/' + id);
+  }
+  addPersonne(personne: Personne): Observable<Personne> {
+    const token = localStorage.getItem('token');
+/*     const params = new HttpParams().set('access_token', token);
+ */
+    const headers = new HttpHeaders().set('Authorization', token);
+    return this.http.post<Personne>(API_PERSONNE_LINK, personne, { headers });
   }
   broadcastSelectedPersonne(personne: Personne) {
     this.selectPersonne.next(personne);
+    /*     localStorage.setItem('token', token); */
   }
 }

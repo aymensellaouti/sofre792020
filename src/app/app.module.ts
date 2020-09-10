@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -34,6 +35,7 @@ import { FormExampleComponent } from './forms/form-example/form-example.componen
 import { AddPersonnesComponent } from './cv/pages/add-personnes/add-personnes.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ObservableExampleComponent } from './observables/observable-example/observable-example.component';
+import { UsersComponent } from './http/users/users.component';
 
 @NgModule({
   declarations: [
@@ -67,8 +69,9 @@ import { ObservableExampleComponent } from './observables/observable-example/obs
     AddPersonnesComponent,
     LoginComponent,
     ObservableExampleComponent,
+    UsersComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })

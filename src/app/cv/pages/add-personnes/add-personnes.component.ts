@@ -13,7 +13,12 @@ export class AddPersonnesComponent implements OnInit {
 
   ngOnInit(): void {}
   addPersonne(form: NgForm) {
-    this.cvService.addPersonne(form.value);
-    this.router.navigate(['cv']);
+    this.cvService.addPersonne(form.value).subscribe(
+      (data) => {
+        console.log(data);
+        this.router.navigate(['cv']);
+      },
+      (erreur) => console.log(erreur)
+    );
   }
 }

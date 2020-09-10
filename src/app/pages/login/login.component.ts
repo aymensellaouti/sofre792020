@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { AuthService } from './../../common/auth.service';
+import { Route } from '@angular/compiler/src/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -7,10 +10,20 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-  constructor() {}
-
+  constructor(private authService: AuthService, private router: Router) {}
+  errorMessage = '';
   ngOnInit(): void {}
   login(form: NgForm) {
-    console.log(form);
+    this.authService.login(form.value).subscribe(
+      (data) => {
+        localStorage.setItem('token', data.id);
+        this.errorMessage = '';
+        this.router.navigate(['cv']);
+      },
+      (erreur) => {
+        console.log(erreur.error);
+        this.errorMessage = erreur.error.error.message;
+      }
+    );
   }
 }

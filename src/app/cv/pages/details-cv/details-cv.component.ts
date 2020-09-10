@@ -18,14 +18,10 @@ export class DetailsCvComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
-      console.log('onInit detail CV');
-      console.log(typeof params.id);
-      const personne = this.cvService.getPersonneById(+params.id);
-      if (personne) {
-        this.personne = personne;
-      } else {
-        this.router.navigate(['']);
-      }
+      this.cvService.getPersonneById(+params.id).subscribe(
+        (personne) => this.personne = personne,
+        (erreur) => this.router.navigate([''])
+      );
     });
   }
 }
